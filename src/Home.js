@@ -19,6 +19,9 @@ function Home() {
         <a className="hover" href="/onhover1">
           Test 1 : on hover
         </a>
+        <a className="animate" href="/animate2">
+          Test 2 : animate
+        </a>
       </header>
     </div>
   );
