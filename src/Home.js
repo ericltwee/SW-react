@@ -22,6 +22,9 @@ function Home() {
         <a className="animate" href="/animate2">
           Test 2 : animate
         </a>
+        <a className="pageslide" href="/fullpage3">
+          Test 3 : Fullpageslide
+        </a>
       </header>
     </div>
   );

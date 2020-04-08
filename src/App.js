@@ -4,6 +4,7 @@ import { Route } from "react-router-dom";
 import Home from "./Home";
 import Onhover from "./worktable/onhover";
 import Animate from "./worktable/animate";
+import Fullpage from "./worktable/fullpage";
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
       </Route>
       <Route exact path="/animate2">
         <Animate />
+      </Route>
+      <Route exact path="/fullpage3">
+        <Fullpage />
       </Route>
     </div>
   );
