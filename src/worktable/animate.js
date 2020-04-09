@@ -1,8 +1,13 @@
 import React from "react";
 
 const Animate = (props) => {
+  const stylo = {
+    overflow: "hidden",
+    backgroundColor: "rgb(181, 255, 181)",
+  };
+
   return (
-    <div>
+    <div style={stylo}>
       <h1 className="animated infinite shake delay-2s">shake</h1>
       <h1 className="animated infinite flash delay-2s">flash</h1>
       <h1 className="animated infinite flip delay-2s">flip</h1>
@@ -14,7 +19,7 @@ const Animate = (props) => {
             <a href="https://github.com/daneden/animate.css">
               animate.css // github
             </a>
-          </li>{" "}
+          </li>
           <li>
             <a href="https://daneden.github.io/animate.css/">
               animate.css // tester
