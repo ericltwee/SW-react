@@ -5,6 +5,7 @@ import Home from "./Home";
 import Onhover from "./worktable/onhover";
 import Animate from "./worktable/animate";
 import Fullpage from "./worktable/fullpage";
+import Color from "./worktable/color";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
       </Route>
       <Route exact path="/fullpage3">
         <Fullpage />
+      </Route>
+      <Route exact path="/color4">
+        <Color />
       </Route>
     </div>
   );

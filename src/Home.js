@@ -25,6 +25,9 @@ function Home() {
         <a className="pageslide" href="/fullpage3">
           Test 3 : Fullpageslide
         </a>
+        <a className="color" href="/color4">
+          Test 4 : Color
+        </a>
       </header>
     </div>
   );
