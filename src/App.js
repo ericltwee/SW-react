@@ -1,30 +1,28 @@
 import React from "react";
-import "./App.css";
-import { Route } from "react-router-dom";
-import Home from "./Home";
-import Onhover from "./worktable/onhover";
-import Animate from "./worktable/animate";
-import Fullpage from "./worktable/fullpage";
-import Color from "./worktable/color";
+import "./styling/main.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Pool from "./components/pool";
+import Menu from "./components/menu";
+import Monster from "./components/pool2";
 
 function App() {
   return (
     <div className="App">
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route exact path="/onhover1">
-        <Onhover />
-      </Route>
-      <Route exact path="/animate2">
-        <Animate />
-      </Route>
-      <Route exact path="/fullpage3">
-        <Fullpage />
-      </Route>
-      <Route exact path="/color4">
-        <Color />
-      </Route>
+      <header className="App-header">
+        <p className="App-title">Monster Database Mock Up</p>
+        <Monster />
+        <Pool />
+
+        {/* <a
+          className="App-link"
+          href="/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          new tab
+        </a> */}
+        <Menu />
+      </header>
     </div>
   );
 }

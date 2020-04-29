@@ -1,0 +1,63 @@
+@import "variables";
+
+.App {
+  text-align: center;
+
+  &-header {
+    background-color: $second-color;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $text-color;
+  }
+
+  &-title {
+    margin-bottom: 2rem;
+  }
+}
+
+Button {
+  background: none;
+
+  &:hover {
+    background: none;
+  }
+}
+
+.custom-modal {
+  width: 500px;
+}
+
+.monster-image {
+  height: 50vh;
+  width: 50vh;
+  background-image: url(../img/Lushen_full.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+img {
+  border-radius: 20%;
+  margin: 0.2rem;
+  opacity: 0.3;
+}
+
+.poolBox {
+  width: 60vw;
+  // border: 1px solid $main-color;
+  padding: 2rem;
+}
+
+.menuBox {
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  height: 20vh;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  // border: 1px solid $main-color;
+}
