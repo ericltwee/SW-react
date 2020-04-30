@@ -1,4 +1,5 @@
 @import "variables";
+@import "responsive";
 
 .App {
   text-align: center;
@@ -35,10 +36,32 @@
       background: none;
     }
   }
+
+  &-logo {
+    filter: grayscale(100%) brightness(30%) opacity(10%);
+    position: fixed;
+    transform: rotate(-20deg) scale(1.5);
+    bottom: 0;
+    right: -5rem;
+  }
 }
 .monster {
+  .modal-backdrop.show {
+    opacity: 0.8;
+  }
+
   .modal-content {
-    height: 50vh;
+    background-color: rgba($second-color, $alpha: 0.9);
+    color: $main-color;
+    border-radius: 1rem;
+  }
+
+  .modal-dialog {
+    width: 350px !important;
+  }
+
+  .modal-body {
+    padding: 2rem;
   }
 
   .modal-footer {
@@ -47,12 +70,23 @@
 
   &-image {
     border-radius: 50%;
+    margin: 1rem;
   }
 
   &-info {
     display: flex;
     flex-direction: row;
     align-items: center;
+  }
+
+  &-skill {
+    display: flex;
+    flex-direction: column;
+
+    img {
+      margin: 0.5rem 1rem 0.5rem 2.5rem;
+      border-radius: 1rem;
+    }
   }
 }
 
