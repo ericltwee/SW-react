@@ -16,32 +16,51 @@
   &-title {
     margin-bottom: 2rem;
   }
-}
 
-Button {
-  background: none;
+  &-pool {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-  &:hover {
+  Button {
+    padding: 0;
     background: none;
+    &.focus,
+    &:focus {
+      outline: 0;
+      box-shadow: none !important;
+    }
+
+    &:hover {
+      background: none;
+    }
+  }
+}
+.monster {
+  .modal-content {
+    height: 50vh;
+  }
+
+  .modal-footer {
+    border: none;
+  }
+
+  &-image {
+    border-radius: 50%;
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 }
 
-.custom-modal {
-  width: 500px;
-}
-
-.monster-image {
-  height: 50vh;
-  width: 50vh;
-  background-image: url(../img/Lushen_full.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-img {
+.monster-btn-img {
   border-radius: 20%;
   margin: 0.2rem;
   opacity: 0.3;
+  filter: grayscale(90%);
 }
 
 .poolBox {
@@ -50,6 +69,7 @@ img {
   padding: 2rem;
 }
 
+/////////////////////////////////////////////////////////menu.js
 .menuBox {
   padding: 1rem;
   position: fixed;

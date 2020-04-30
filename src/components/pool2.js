@@ -1,26 +1,25 @@
 import React from "react";
 import mon1 from "../img/Lushen.png";
-import full1 from "../img/Lushen_full.png";
 import "../styling/main.scss";
 import { Modal, Button } from "react-bootstrap";
 
 function MyVerticallyCenteredModal(props) {
   return (
     <Modal
-      dialogClassName="custom-modal"
+      dialogClassName="monster"
       {...props}
-      size="lg"
+      size="md"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      {/* <Modal.Header>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
-        </Modal.Title>
-      </Modal.Header> */}
       <Modal.Body>
-        <h4>Lushen</h4>
-        <div className="monster-image">asdf</div>
+        <div className="monster-info">
+          <img className="monster-image" src={mon1} alt="logo" />{" "}
+          <div>
+            <h2 className="name-awakened">Lushen</h2>
+            <h5 className="name-unawakened">Joker</h5>
+          </div>
+        </div>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Edit</Button>
@@ -38,6 +37,7 @@ function Monster() {
         {`
     .btn-flat {
       background-color: none;
+      outline: none;
     }
     `}
       </style>
@@ -46,7 +46,7 @@ function Monster() {
         className="monster-btn"
         onClick={() => setModalShow(true)}
       >
-        <img className="monster-full" src={mon1} alt="logo" />
+        <img className="monster-btn-img" src={mon1} alt="logo" />
       </Button>
 
       <MyVerticallyCenteredModal
