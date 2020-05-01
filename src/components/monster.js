@@ -1,5 +1,6 @@
 import React from "react";
 import mon1 from "../img/Lushen.png";
+import wind from "../img/element/wind-large.png";
 import skill1 from "../img/Lushen/skill1.png";
 import skill2 from "../img/Lushen/skill2.png";
 import skill3 from "../img/Lushen/skill3.png";
@@ -16,11 +17,18 @@ function MyVerticallyCenteredModal(props) {
       centered
     >
       <Modal.Body>
+        <img className="monster-attribute" src={wind} alt="logo" />
         <div className="monster-info">
           <img className="monster-image" src={mon1} alt="logo" />
           <div>
             <h2 className="name-awakened">Lushen</h2>
             <h6 className="name-unawakened">Joker</h6>
+            <div className="monster-tier">
+              <i className="fas fa-star fa-xs"></i>
+              <i className="fas fa-star fa-xs"></i>
+              <i className="fas fa-star fa-xs"></i>
+              <i className="fas fa-star fa-xs"></i>
+            </div>
           </div>
         </div>
         <div className="monster-skill">
@@ -37,10 +45,12 @@ function MyVerticallyCenteredModal(props) {
             skill descriptions
           </div>
         </div>
+        <div className="monster-btn-edit">
+          <Button variant="secondary" onClick={props.onHide}>
+            <i className="fas fa-pencil-alt"></i>
+          </Button>
+        </div>
       </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Edit</Button>
-      </Modal.Footer>
     </Modal>
   );
 }

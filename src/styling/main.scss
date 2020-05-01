@@ -1,5 +1,6 @@
 @import "variables";
 @import "responsive";
+@import "modal";
 
 .App {
   text-align: center;
@@ -21,6 +22,7 @@
   &-pool {
     display: flex;
     flex-wrap: wrap;
+    z-index: 1;
   }
 
   Button {
@@ -43,50 +45,6 @@
     transform: rotate(-20deg) scale(1.5);
     bottom: 0;
     right: -5rem;
-  }
-}
-.monster {
-  .modal-backdrop.show {
-    opacity: 0.8;
-  }
-
-  .modal-content {
-    background-color: rgba($second-color, $alpha: 0.9);
-    color: $main-color;
-    border-radius: 1rem;
-  }
-
-  .modal-dialog {
-    width: 350px !important;
-  }
-
-  .modal-body {
-    padding: 2rem;
-  }
-
-  .modal-footer {
-    border: none;
-  }
-
-  &-image {
-    border-radius: 50%;
-    margin: 1rem;
-  }
-
-  &-info {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  &-skill {
-    display: flex;
-    flex-direction: column;
-
-    img {
-      margin: 0.5rem 1rem 0.5rem 2.5rem;
-      border-radius: 1rem;
-    }
   }
 }
 

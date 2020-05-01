@@ -1,0 +1,67 @@
+.monster {
+  .modal-backdrop.show {
+    opacity: 0.8;
+  }
+
+  .modal-content {
+    background-color: rgba($second-color, $alpha: 0.9);
+    color: $main-color;
+    border-radius: 1rem;
+  }
+
+  .modal-dialog {
+    width: 350px !important;
+  }
+
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+    // align-items: center;
+    padding: 2rem;
+  }
+
+  .modal-footer {
+    border: none;
+  }
+
+  &-attribute {
+    position: absolute;
+    top: -2rem;
+    right: 9rem;
+  }
+
+  &-image {
+    border-radius: 50%;
+    margin: 1rem;
+  }
+
+  &-tier {
+    color: yellow;
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &-skill {
+    display: flex;
+    flex-direction: column;
+
+    img {
+      margin: 0.5rem 1rem 0.5rem 2.5rem;
+      border-radius: 1rem;
+    }
+  }
+
+  &-btn-edit {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+  }
+}

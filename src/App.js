@@ -3,7 +3,7 @@ import "./styling/main.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "./img/logo.png";
 import Menu from "./components/menu";
-import Monster from "./components/pool2";
+import Monster from "./components/monster";
 
 function App() {
   return (
