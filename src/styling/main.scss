@@ -16,11 +16,14 @@
   }
 
   &-title {
-    margin-bottom: 2rem;
+    position: absolute;
+    top: 1rem;
+    // margin-bottom: 2rem;
   }
 
   &-pool {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     z-index: 1;
   }

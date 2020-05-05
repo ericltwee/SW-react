@@ -1,5 +1,5 @@
 import React from "react";
-import mon1 from "../img/Lushen.png";
+import mon1 from "../img/Lushen/Lushen.png";
 import wind from "../img/element/wind-large.png";
 import skill1 from "../img/Lushen/skill1.png";
 import skill2 from "../img/Lushen/skill2.png";
@@ -55,7 +55,7 @@ function MyVerticallyCenteredModal(props) {
   );
 }
 
-function Monster() {
+function Lushen() {
   const [modalShow, setModalShow] = React.useState(false);
 
   return (
@@ -84,4 +84,4 @@ function Monster() {
   );
 }
 
-export default Monster;
+export default Lushen;
