@@ -5,7 +5,7 @@ import { Modal, Button, Form, Col } from "react-bootstrap";
 function MyVerticallyCenteredModal(props) {
   return (
     <Modal
-      dialogClassName="monster"
+      dialogClassName="upload"
       {...props}
       size="md"
       aria-labelledby="contained-modal-title-vcenter"
