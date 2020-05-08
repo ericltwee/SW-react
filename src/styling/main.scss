@@ -1,6 +1,7 @@
 @import "variables";
 @import "responsive";
 @import "modal";
+@import "uploader";
 
 .App {
   text-align: center;
@@ -26,6 +27,7 @@
     justify-content: center;
     flex-wrap: wrap;
     z-index: 1;
+    width: 80vw;
   }
 
   Button {
@@ -74,5 +76,10 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  z-index: 1;
   // border: 1px solid $main-color;
+}
+
+.Upload-btn i {
+  color: $text-color;
 }

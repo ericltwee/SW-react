@@ -3,3 +3,9 @@
     width: 350px !important;
   }
 }
+
+@media (max-width: 576px) {
+  .monster-btn-img {
+    width: 4rem;
+  }
+}
