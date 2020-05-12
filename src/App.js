@@ -6,6 +6,7 @@ import Menu from "./components/menu";
 import Lushen from "./components/Lushen";
 import Tesarion from "./components/Tesarion";
 import Praha from "./components/Praha";
+import Example from "./components/Monster";
 
 function App() {
   return (

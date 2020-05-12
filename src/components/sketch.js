@@ -56,3 +56,4 @@ export default Monstar;
 //         console.log(result)
 //     }
 // })
+// result.records[i].fields.image[0].thumbnails.large.url;
