@@ -1,59 +1,58 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
+import mon1 from "../img/Praha/Praha.png";
+import water from "../img/element/water-large.png";
+import skill1 from "../img/Praha/Passing_Time.png";
+import skill2 from "../img/Praha/Predicted_Futur.png";
+import skill3 from "../img/Praha/Daydream.png";
+import "../styling/main.scss";
+import { Modal, Button } from "react-bootstrap";
 
-function Monstar() {
-  const [monster, setUsers] = useState([]);
-
-  useEffect(() => {
-    axios.get("https://insta.nextacademy.com/api/v1/users").then((result) => {
-      console.log(result);
-      setUsers(result.data);
-    });
-  }, []);
-
+function MonsModal(props) {
   return (
-    <div className="App">
-      <Container>
-        <Row>
-          {monster.map((mons) => {
-            return (
-              <Col key={mons.id} md={12}>
-                <Card>
-                  <CardBody>
-                    <Col>
-                      <Image
-                        className="col-md-3 my-2 rounded-circle"
-                        src={mons.profileImage}
-                        alt={mons.username}
-                      />
-                    </Col>
-                    {/* <Row>
-                      <Col>
-                        <div>
-                          <UserImages userId={user.id} />
-                        </div>
-                      </Col>
-                    </Row> */}
-                  </CardBody>
-                </Card>
-              </Col>
-            );
-          })}
-        </Row>
-      </Container>
-    </div>
+    <Modal
+      dialogClassName="monster"
+      {...props}
+      size="md"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Body>
+        <img className="monster-attribute" src={water} alt="logo" />
+        <div className="monster-info">
+          <img className="monster-image" src={mon1} alt="logo" />
+          <div>
+            <h2 className="name-awakened">Praha</h2>
+            <h6 className="name-unawakened">Oracle</h6>
+            <div className="monster-tier">
+              <i className="fas fa-star fa-xs"></i>
+              <i className="fas fa-star fa-xs"></i>
+              <i className="fas fa-star fa-xs"></i>
+              <i className="fas fa-star fa-xs"></i>
+              <i className="fas fa-star fa-xs"></i>
+            </div>
+          </div>
+        </div>
+        <div className="monster-skill">
+          <div>
+            <img id="monster-skill-1" src={skill1} alt="logo" />
+            skill descriptions
+          </div>
+          <div>
+            <img id="monster-skill-2" src={skill2} alt="logo" />
+            skill descriptions
+          </div>
+          <div>
+            <img id="monster-skill-3" src={skill3} alt="logo" />
+            skill descriptions
+          </div>
+        </div>
+        <div className="monster-btn-edit">
+          <Button variant="secondary" onClick={props.onHide}>
+            <i className="fas fa-pencil-alt"></i>
+          </Button>
+        </div>
+      </Modal.Body>
+    </Modal>
   );
 }
-
-export default Monstar;
-// $.ajax({
-//     url: 'https://api.airtable.com/v0/app25hZv7kC5FduwL/Monster%20List',
-//     method: 'GET',
-//     headers: {
-//         Authorization: 'Bearer key8txJ4DSHAMTJyD'
-//     },
-//     success: function (result) {
-//         console.log(result)
-//     }
-// })
-// result.records[i].fields.image[0].thumbnails.large.url;
+export default MonsModal;

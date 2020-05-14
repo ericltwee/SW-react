@@ -6,7 +6,7 @@ import Menu from "./components/menu";
 import Lushen from "./components/Lushen";
 import Tesarion from "./components/Tesarion";
 import Praha from "./components/Praha";
-import Example from "./components/Monster";
+import Monsterr from "./components/Monster";
 
 function App() {
   return (
@@ -18,51 +18,14 @@ function App() {
             <Lushen />
           </div>
           <div className="App-btn">
-            <Lushen />
-          </div>
-          <div className="App-btn">
-            <Lushen />
-          </div>
-          <div className="App-btn">
-            <Tesarion />
-          </div>
-          <div className="App-btn">
-            <Lushen />
-          </div>
-          <div className="App-btn">
             <Praha />
           </div>
           <div className="App-btn">
             <Tesarion />
           </div>
-          <div className="App-btn">
-            <Tesarion />
-          </div>
-          <div className="App-btn">
-            <Lushen />
-          </div>
-          <div className="App-btn">
-            <Tesarion />
-          </div>
-          <div className="App-btn">
-            <Tesarion />
-          </div>
-          <div className="App-btn">
-            <Tesarion />
-          </div>
-          <div className="App-btn">
-            <Tesarion />
-          </div>
-          <div className="App-btn">
-            <Praha />
-          </div>
-          <div className="App-btn">
-            <Praha />
-          </div>
-          <div className="App-btn">
-            <Tesarion />
-          </div>
+          <Monsterr />
         </div>
+
         <Menu />
         <img className="App-logo" src={logo} alt="logo" />
       </header>

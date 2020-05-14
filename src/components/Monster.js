@@ -1,53 +1,82 @@
-// import React from "react";
-// import { Col, Card, CardBody, CardTitle, Container, Row } from "reactstrap";
-// import UserImages from "../components/UserImages";
-// import Image from "react-graceful-image";
-// import { Link } from "react-router-dom";
-// import Loader from "../components/Loader";
+import React, { Component } from "react";
+import "../styling/main.scss";
+import { Button } from "react-bootstrap";
+import MonsModal from "./sketch.js";
 
-// const HomePage = ({ users, isLoading }) => {
-//     if (isLoading) {
-//         return <Loader size="250px" />;
-//     }
-//     return (
-//         <Container>
-//             <Row>
-//                 {users.map(user => {
-//                     return (
-//                         <Col key={user.id} md={12}>
-//                             <Card
-//                                 style={{ backgroundColor: "transparent", border: "3px solid" }}
-//                                 className="my-3"
-//                             >
-//                                 <CardBody>
-//                                     <Col>
-//                                         <Image
-//                                             className="col-md-3 my-2 rounded-circle"
-//                                             src={user.profileImage}
-//                                             alt={user.username}
-//                                         />
-//                                         <CardTitle
-//                                             tag={Link}
-//                                             to={`/user/${user.id}/${user.username}`}
-//                                         >
-//                                             {user.username}
-//                                         </CardTitle>
-//                                     </Col>
-//                                     <Row>
-//                                         <Col>
-//                                             <div>
-//                                                 <UserImages userId={user.id} />
-//                                             </div>
-//                                         </Col>
-//                                     </Row>
-//                                 </CardBody>
-//                             </Card>
-//                         </Col>
-//                     );
-//                 })}
-//             </Row>
-//         </Container>
-//     );
-// };
+class Monsterr extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      monster: [],
+    };
+  }
 
-// export default HomePage;
+  componentDidMount() {
+    fetch(
+      "https://api.airtable.com/v0/app25hZv7kC5FduwL/Monster%20List?api_key=key8txJ4DSHAMTJyD"
+    )
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log(data);
+        this.setState({ monster: data.records });
+      })
+      .catch((err) => {
+        // Error
+      });
+  }
+
+  render() {
+    return (
+      <div className="container">
+        <div>
+          <div className="card-deck">
+            {this.state.monster.map((data) => (
+              <MonsCard {...data.fields} />
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default Monsterr;
+
+function MonsCard({ Image }) {
+  const [modalShow, setModalShow] = React.useState(false);
+
+  return (
+    <>
+      <style type="text/css">
+        {`
+    .btn-flat {
+      background-color: none;
+      outline: none;
+    }
+    `}
+      </style>
+      <Button
+        variant="flat"
+        className="monster-btn"
+        onClick={() => setModalShow(true)}
+      >
+        <img className="monster-btn-img" src={Image[0].url} alt="Avatar" />
+      </Button>
+
+      <MonsModal show={modalShow} onHide={() => setModalShow(false)} />
+    </>
+  );
+}
+
+// const MonsCardd = ({ Image, year, description, imageURL }) => (
+//   <div className="card">
+//     <img className="monster-btn-img" src={Image[0].url} alt="Avatar" />
+//     <div className="card-body">
+//       <h5 className="card-title">{years}</h5>
+//       <p className="card-text">{description}</p>
+//       <p className="card-text">
+//         <small className="text-muted">{year}</small>
+//       </p>
+//     </div>
+//   </div>
+// );
