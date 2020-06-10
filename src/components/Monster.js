@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "../styling/main.scss";
-import { Button } from "react-bootstrap";
-import MonsModal from "./sketch.js";
+import MonsCard from "./MonsCard";
 
 class Monsterr extends Component {
   constructor(props) {
@@ -41,32 +40,6 @@ class Monsterr extends Component {
 }
 
 export default Monsterr;
-
-function MonsCard({ Image }) {
-  const [modalShow, setModalShow] = React.useState(false);
-
-  return (
-    <>
-      <style type="text/css">
-        {`
-    .btn-flat {
-      background-color: none;
-      outline: none;
-    }
-    `}
-      </style>
-      <Button
-        variant="flat"
-        className="monster-btn"
-        onClick={() => setModalShow(true)}
-      >
-        <img className="monster-btn-img" src={Image[0].url} alt="Avatar" />
-      </Button>
-
-      <MonsModal show={modalShow} onHide={() => setModalShow(false)} />
-    </>
-  );
-}
 
 // const MonsCardd = ({ Image, year, description, imageURL }) => (
 //   <div className="card">
