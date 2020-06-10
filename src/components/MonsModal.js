@@ -9,6 +9,12 @@ import { Modal, Button } from "react-bootstrap";
 
 function MonsModal(props) {
   const {family, id, image, name, rating} = props
+  const stars = []
+
+  for (let i=0; i<rating; i++){
+    stars.push(<i key={i} className="fas fa-star fa-xs"></i>)
+  }
+
   return (
     <Modal
       dialogClassName="monster"
@@ -25,7 +31,7 @@ function MonsModal(props) {
             <h2 className="name-awakened">{name}</h2>
             <h6 className="name-unawakened">{family}</h6>
             <div className="monster-tier">
-              <i className="fas fa-star fa-xs"></i>
+              {stars}
             </div>
           </div>
         </div>
