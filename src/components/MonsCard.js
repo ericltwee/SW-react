@@ -23,7 +23,7 @@ export default function MonsCard({ image, ...rest }) {
         <img className="monster-btn-img" src={image} alt="Avatar" />
       </Button>
 
-      <MonsModal image={image} show={modalShow} onHide={() => setModalShow(false)} {...rest} />
+      {modalShow && <MonsModal image={image} show={modalShow} onHide={() => setModalShow(false)} {...rest} />}
     </>
   );
 }

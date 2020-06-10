@@ -7,10 +7,9 @@ import "../styling/main.scss";
 import { Modal, Button } from "react-bootstrap";
 
 function MonsModal(props) {
-  const {family, id, image, name, rating} = props
+  const { family, id, image, name, rating } = props
   const stars = []
   const [skills, setSkills] = useState([]);
-  console.log(id)
 
   // TODO: replace api key and table keys with env variables
 
@@ -20,15 +19,17 @@ function MonsModal(props) {
     )
       .then((resp) => resp.json())
       .then((data) => {
-        console.log(data.records);
+        data.records.forEach(record => {
+          setSkills(s => [...s, record.fields])
+        });
       })
       .catch((err) => {
         // Error
       });
-  
-  }, [])
 
-  for (let i=0; i<rating; i++){
+  }, [id])
+
+  for (let i = 0; i < rating; i++) {
     stars.push(<i key={i} className="fas fa-star fa-xs"></i>)
   }
 
@@ -54,16 +55,14 @@ function MonsModal(props) {
         </div>
         <div className="monster-skill">
           <div>
-            <img id="monster-skill-1" src={skill1} alt="logo" />
-            skill descriptions
-          </div>
-          <div>
-            <img id="monster-skill-2" src={skill2} alt="logo" />
-            skill descriptions
-          </div>
-          <div>
-            <img id="monster-skill-3" src={skill3} alt="logo" />
-            skill descriptions
+            {skills
+              ? skills.map(skill => (
+                <div key={skill.Icon[0].id}>
+                  <img id={skill.Icon[0].id} src={skill.Icon[0].url} alt="" />
+                  {skill["Description"]}
+                </div>
+              ))
+              : <h3>Loading...</h3>}
           </div>
         </div>
         <div className="monster-btn-edit">
