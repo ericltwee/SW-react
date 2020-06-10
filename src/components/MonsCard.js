@@ -1,8 +1,8 @@
 import React from 'react'
 import { Button } from 'react-bootstrap';
-import MonsModal from './sketch';
+import MonsModal from './MonsModal';
 
-export default function MonsCard({ Image }) {
+export default function MonsCard({ image, ...rest }) {
   const [modalShow, setModalShow] = React.useState(false);
 
   return (
@@ -20,10 +20,10 @@ export default function MonsCard({ Image }) {
         className="monster-btn"
         onClick={() => setModalShow(true)}
       >
-        <img className="monster-btn-img" src={Image[0].url} alt="Avatar" />
+        <img className="monster-btn-img" src={image} alt="Avatar" />
       </Button>
 
-      <MonsModal show={modalShow} onHide={() => setModalShow(false)} />
+      <MonsModal image={image} show={modalShow} onHide={() => setModalShow(false)} {...rest} />
     </>
   );
 }

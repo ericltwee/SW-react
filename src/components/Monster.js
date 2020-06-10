@@ -6,7 +6,7 @@ class Monsterr extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      monster: [],
+      monsters: [],
     };
   }
 
@@ -17,7 +17,7 @@ class Monsterr extends Component {
       .then((resp) => resp.json())
       .then((data) => {
         console.log(data);
-        this.setState({ monster: data.records });
+        this.setState({ monsters: data.records });
       })
       .catch((err) => {
         // Error
@@ -26,15 +26,20 @@ class Monsterr extends Component {
 
   render() {
     return (
-      <div className="container">
+      this.state.monsters.length === 0
+        ?
+        <div className="container">
+          Loading
+        </div>
+        :
         <div>
           <div className="card-deck">
-            {this.state.monster.map((data) => (
-              <MonsCard {...data.fields} />
+            {this.state.monsters.map((monster) => (
+              <MonsCard key={monster.id} id={monster.id} name={monster.fields['Name']} family={monster.fields['Family Name']} image={monster.fields['Image'][0].url} rating={monster.fields['Rating']} />
             ))}
           </div>
         </div>
-      </div>
+
     );
   }
 }

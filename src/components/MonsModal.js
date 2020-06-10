@@ -8,6 +8,7 @@ import "../styling/main.scss";
 import { Modal, Button } from "react-bootstrap";
 
 function MonsModal(props) {
+  const {family, id, image, name, rating} = props
   return (
     <Modal
       dialogClassName="monster"
@@ -19,15 +20,11 @@ function MonsModal(props) {
       <Modal.Body>
         <img className="monster-attribute" src={water} alt="logo" />
         <div className="monster-info">
-          <img className="monster-image" src={mon1} alt="logo" />
+          <img className="monster-image" src={image} alt="logo" />
           <div>
-            <h2 className="name-awakened">Praha</h2>
-            <h6 className="name-unawakened">Oracle</h6>
+            <h2 className="name-awakened">{name}</h2>
+            <h6 className="name-unawakened">{family}</h6>
             <div className="monster-tier">
-              <i className="fas fa-star fa-xs"></i>
-              <i className="fas fa-star fa-xs"></i>
-              <i className="fas fa-star fa-xs"></i>
-              <i className="fas fa-star fa-xs"></i>
               <i className="fas fa-star fa-xs"></i>
             </div>
           </div>
