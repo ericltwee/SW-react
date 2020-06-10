@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 import water from "../img/element/water-large.png";
-import skill1 from "../img/Praha/Passing_Time.png";
-import skill2 from "../img/Praha/Predicted_Futur.png";
-import skill3 from "../img/Praha/Daydream.png";
 import "../styling/main.scss";
 import { Modal, Button } from "react-bootstrap";
 
