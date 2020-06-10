@@ -1,5 +1,4 @@
-import React from "react";
-import mon1 from "../img/Praha/Praha.png";
+import React, { useState, useEffect } from "react";
 import water from "../img/element/water-large.png";
 import skill1 from "../img/Praha/Passing_Time.png";
 import skill2 from "../img/Praha/Predicted_Futur.png";
@@ -10,6 +9,24 @@ import { Modal, Button } from "react-bootstrap";
 function MonsModal(props) {
   const {family, id, image, name, rating} = props
   const stars = []
+  const [skills, setSkills] = useState([]);
+  console.log(id)
+
+  // TODO: replace api key and table keys with env variables
+
+  useEffect(() => {
+    fetch(
+      `https://api.airtable.com/v0/app25hZv7kC5FduwL/Skills?api_key=key8txJ4DSHAMTJyD&filterByFormula={MonsterID}="${id}"`
+    )
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log(data.records);
+      })
+      .catch((err) => {
+        // Error
+      });
+  
+  }, [])
 
   for (let i=0; i<rating; i++){
     stars.push(<i key={i} className="fas fa-star fa-xs"></i>)
