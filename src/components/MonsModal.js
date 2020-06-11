@@ -19,6 +19,7 @@ function MonsModal(props) {
   const { family, id, image, name, rating, element } = props
   const stars = []
   const [skills, setSkills] = useState([]);
+  const [skillsLoaded, setSkillsLoaded] = useState(false)
 
   // TODO: replace api key and table keys with env variables
 
@@ -29,8 +30,9 @@ function MonsModal(props) {
       .then((resp) => resp.json())
       .then((data) => {
         data.records.forEach(record => {
-          setSkills(s => [...s, record.fields])
+          setSkills(s => [...s, record.fields]);
         });
+        setSkillsLoaded(true);
       })
       .catch((err) => {
         // Error
@@ -77,7 +79,9 @@ function MonsModal(props) {
                 <hr />
               </>
             ))
-            : <h3>Loading...</h3>}
+            : skillsLoaded 
+              ? <h5>No skills in database!</h5>
+              : <h3>Loading...</h3>}
         </div>
         <div className="monster-btn-edit">
           <Button variant="secondary" onClick={props.onHide}>
