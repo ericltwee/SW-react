@@ -1,12 +1,25 @@
 import React, { useState, useEffect } from "react";
 import water from "../img/element/water-large.png";
+import fire from "../img/element/fire-large.png";
+import light from "../img/element/light-large.png";
+import wind from "../img/element/wind-large.png";
+import dark from "../img/element/dark-large.png";
 import "../styling/main.scss";
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, Row, Col } from "react-bootstrap";
+
+const elementRef = {
+  water,
+  fire,
+  wind,
+  light,
+  dark
+}
 
 function MonsModal(props) {
-  const { family, id, image, name, rating } = props
+  const { family, id, image, name, rating, element } = props
   const stars = []
   const [skills, setSkills] = useState([]);
+  const [skillsLoaded, setSkillsLoaded] = useState(false)
 
   // TODO: replace api key and table keys with env variables
 
@@ -17,8 +30,9 @@ function MonsModal(props) {
       .then((resp) => resp.json())
       .then((data) => {
         data.records.forEach(record => {
-          setSkills(s => [...s, record.fields])
+          setSkills(s => [...s, record.fields]);
         });
+        setSkillsLoaded(true);
       })
       .catch((err) => {
         // Error
@@ -39,7 +53,7 @@ function MonsModal(props) {
       centered
     >
       <Modal.Body>
-        <img className="monster-attribute" src={water} alt="logo" />
+        <img className="monster-attribute" src={elementRef[element.toLowerCase()]} alt="logo" />
         <div className="monster-info">
           <img className="monster-image" src={image} alt="logo" />
           <div>
@@ -51,16 +65,23 @@ function MonsModal(props) {
           </div>
         </div>
         <div className="monster-skill">
-          <div>
-            {skills
-              ? skills.map(skill => (
-                <div key={skill.Icon[0].id}>
-                  <img id={skill.Icon[0].id} src={skill.Icon[0].url} alt="" />
-                  {skill["Description"]}
-                </div>
-              ))
+          {skills.length
+            ? skills.map(skill => (
+              <>
+                <Row key={skill.Icon[0].id}>
+                  <Col md={3}>
+                    <img id={skill.Icon[0].id} src={skill.Icon[0].url} alt="" />
+                  </Col>
+                  <Col md={9}>
+                    <small>{skill["Description"]}</small>
+                  </Col>
+                </Row>
+                <hr />
+              </>
+            ))
+            : skillsLoaded 
+              ? <h5>No skills in database!</h5>
               : <h3>Loading...</h3>}
-          </div>
         </div>
         <div className="monster-btn-edit">
           <Button variant="secondary" onClick={props.onHide}>

@@ -16,7 +16,6 @@ class Monsterr extends Component {
     )
       .then((resp) => resp.json())
       .then((data) => {
-        console.log(data);
         this.setState({ monsters: data.records });
       })
       .catch((err) => {
@@ -25,8 +24,9 @@ class Monsterr extends Component {
   }
 
   render() {
+    const { monsters } = this.state;
     return (
-      this.state.monsters.length === 0
+      monsters.length === 0
         ?
         <div className="container">
           Loading
@@ -34,8 +34,16 @@ class Monsterr extends Component {
         :
         <div>
           <div className="card-deck">
-            {this.state.monsters.map((monster) => (
-              <MonsCard key={monster.id} id={monster.id} name={monster.fields['Name']} family={monster.fields['Family Name']} image={monster.fields['Image'][0].url} rating={monster.fields['Rating']} />
+            {monsters.map((monster) => (
+              <MonsCard
+                key={monster.id}
+                id={monster.id}
+                name={monster.fields['Name']}
+                family={monster.fields['Family Name']}
+                image={monster.fields['Image'][0].url}
+                rating={monster.fields['Rating']}
+                element={monster.fields['Attribute']}
+              />
             ))}
           </div>
         </div>
