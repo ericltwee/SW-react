@@ -1,0 +1,245 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    width: 350px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .monster-btn-img {
+    width: 4rem;
+  }
+  .modal-dialog {
+    width: 350px !important;
+  }
+}
+
+.monster .modal-backdrop.show {
+  opacity: 0.8;
+}
+
+.monster .modal-content {
+  background-color: rgba(35, 35, 35, 0.9);
+  color: #ffffff;
+  border-radius: 1rem;
+}
+
+.monster .modal-dialog {
+  width: 350px !important;
+}
+
+.monster .modal-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2rem;
+}
+
+.monster .modal-footer {
+  border: none;
+}
+
+.monster-attribute {
+  position: absolute;
+  top: -2rem;
+  right: 9rem;
+}
+
+.monster-image {
+  border-radius: 50%;
+  margin: 1rem;
+}
+
+.monster-tier {
+  color: yellow;
+}
+
+.monster-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.monster-skill {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.monster-skill .row {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.monster-skill img {
+  border-radius: 1rem;
+}
+
+.monster-btn-edit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+}
+
+.upload .modal-backdrop.show {
+  opacity: 0.8;
+}
+
+.upload .modal-content {
+  background-color: rgba(35, 35, 35, 0.9);
+  color: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid #49ddae;
+}
+
+.upload .modal-dialog {
+  width: 350px !important;
+}
+
+.upload .modal-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2rem;
+}
+
+.upload-form {
+  color: #49ddae;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #232323;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #49ddae;
+}
+
+.App-title {
+  position: absolute;
+  top: 1rem;
+}
+
+.App-pool {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  z-index: 1;
+  width: 80vw;
+}
+
+.App Button {
+  padding: 0;
+  background: none;
+}
+
+.App Button.focus, .App Button:focus {
+  outline: 0;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.App Button:hover {
+  background: none;
+}
+
+.App-logo {
+  -webkit-filter: grayscale(100%) brightness(30%) opacity(10%);
+          filter: grayscale(100%) brightness(30%) opacity(10%);
+  position: fixed;
+  -webkit-transform: rotate(-20deg) scale(1.5);
+          transform: rotate(-20deg) scale(1.5);
+  bottom: 0;
+  right: -5rem;
+}
+
+.monster-btn-img {
+  border-radius: 20%;
+  margin: 0.2rem;
+  opacity: 0.3;
+  -webkit-filter: grayscale(90%);
+          filter: grayscale(90%);
+}
+
+.poolBox {
+  width: 60vw;
+  padding: 2rem;
+}
+
+.menuBox {
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  height: 20vh;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  z-index: 1;
+}
+
+.Upload-btn i {
+  color: #49ddae;
+}
+/*# sourceMappingURL=main.css.map */
